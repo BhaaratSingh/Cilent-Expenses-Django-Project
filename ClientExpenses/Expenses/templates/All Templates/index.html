@@ -1,0 +1,63 @@
+<!doctype html>
+{%load static from staticfiles%}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sandy">
+
+    <title>All Clients</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load staticfiles %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Fontawesome icons library -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    {% load staticfiles %}
+    <link href="{% static 'css/album.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+  <div class="container">
+    <div class="row">
+     <br>
+    </div>
+    <div class="row align-right">
+       <div class="col-sm-4 align-self-center">
+
+
+         <div class="list-group">
+             <a href="" class="list-group-item list-group-item-action active">
+              All Clients
+            </a>
+            {% for client in clients %}
+              <a href="{% url 'ExpensesDetailsView'%}?c_id={{client.client_id}}" class="list-group-item list-group-item-action list-group-item-success" target="_blank">
+                 {{client.name}}
+              </a>
+            {% endfor %}
+      <a align="right" href="http://127.0.0.1:8000/admin/Expenses/client/add/" class="btn btn-success" target="_blank" data-toggle="tooltip" data-placement="right" title="This button will open Django Admin page">+ Add Clients</a>
+
+         </div>
+      </div>
+     </div>
+  </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    {% load staticfiles %}
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  </body>
+</html>
