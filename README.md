@@ -1,4 +1,4 @@
-# Clent-Expenses-Django-Project
+# Cilent-Expenses-Django-Project
 It is a Web App which will display the Expenses of client.
 
 I have used Bootstrap and Djnago to make this web app.
